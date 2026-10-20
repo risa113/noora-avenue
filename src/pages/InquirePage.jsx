@@ -13,20 +13,20 @@ export default function InquirePage() {
   };
 
   return (
-    <div className="py-12 md:py-20 bg-surface">
-      <div className="max-w-screen-2xl mx-auto px-space-md md:px-margin-desktop">
+    <div className="py-10 sm:py-16 md:py-20 bg-surface">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-space-md md:px-margin-desktop">
         
         {/* Page Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
           <div className="flex items-center justify-center space-x-2 mb-2">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
+            <span className="font-label-sm text-[11px] sm:text-label-sm uppercase tracking-widest text-secondary">
               06 / Expression of Interest
             </span>
           </div>
-          <h1 className="font-display-xl-mobile md:font-display-xl text-primary font-normal leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-display-xl font-display-xl text-primary font-normal leading-tight">
             Initiate a Direct Dialogue
           </h1>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto">
+          <p className="font-body-md text-xs sm:text-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto leading-relaxed">
             Register your interest to receive verified survey documents, technical blueprints, or coordinate an accompanied site inspection at Kokkadikulam Scheme No: 2.
           </p>
           <div className="w-12 h-px bg-secondary mx-auto mt-4"></div>

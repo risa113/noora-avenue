@@ -63,7 +63,7 @@ export default function RealSlideshow() {
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Slides Container */}
-      <div className="relative w-full h-[420px] sm:h-[500px] lg:h-[640px] overflow-hidden">
+      <div className="relative w-full h-[460px] sm:h-[520px] lg:h-[640px] overflow-hidden">
         {slides.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
@@ -77,30 +77,30 @@ export default function RealSlideshow() {
                 src={slide.image}
                 alt={slide.title}
                 className={`w-full h-full ${
-                  slide.isBlueprint ? 'object-contain bg-[#f3ede1] p-4' : 'object-cover filter contrast-[1.03] brightness-[0.98]'
+                  slide.isBlueprint ? 'object-contain bg-[#f3ede1] p-3 sm:p-4' : 'object-cover filter contrast-[1.03] brightness-[0.98]'
                 } ${isActive ? 'slide-bg-active' : ''}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent"></div>
 
               {/* Animated Slide Content */}
-              <div className="absolute bottom-0 inset-x-0 p-6 md:p-10 text-white z-20">
+              <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 md:p-10 text-white z-20">
                 <div className="max-w-3xl">
                   {isActive && (
                     <>
-                      <span className="inline-block border border-white/30 bg-primary/40 backdrop-blur-sm px-3.5 py-1 text-[11px] font-label-sm uppercase tracking-wider mb-2 text-secondary-fixed-dim animate-slide-badge">
+                      <span className="inline-block border border-white/30 bg-primary/60 backdrop-blur-sm px-2.5 sm:px-3.5 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-label-sm uppercase tracking-wider mb-2 text-secondary-fixed-dim animate-slide-badge">
                         {slide.badge}
                       </span>
-                      <h3 className="font-headline-lg-mobile md:font-headline-lg text-white font-normal mb-2 leading-tight animate-slide-title">
+                      <h3 className="text-xl sm:text-2xl md:text-headline-lg font-display-lg text-white font-normal mb-2 leading-tight animate-slide-title">
                         {slide.title}
                       </h3>
-                      <p className="font-body-md text-sm md:text-base text-surface-container-low max-w-2xl mb-4 animate-slide-desc">
+                      <p className="font-body-md text-xs sm:text-sm md:text-base text-surface-container-low max-w-2xl mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-none animate-slide-desc">
                         {slide.desc}
                       </p>
-                      <div className="flex flex-wrap gap-2 text-xs font-tabular-spec animate-slide-specs">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-tabular-spec animate-slide-specs">
                         {slide.specs.map((spec, i) => (
                           <span
                             key={i}
-                            className="bg-surface/15 backdrop-blur-sm px-3 py-1 border border-white/20"
+                            className="bg-surface/20 backdrop-blur-sm px-2.5 py-1 border border-white/20"
                           >
                             {spec}
                           </span>
@@ -116,7 +116,7 @@ export default function RealSlideshow() {
       </div>
 
       {/* Slide Controls Bar */}
-      <div className="bg-surface/95 backdrop-blur-sm px-6 py-4 joinery-border-t flex flex-wrap justify-between items-center gap-4 text-xs">
+      <div className="bg-surface/95 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 joinery-border-t flex flex-wrap justify-between items-center gap-3 text-xs">
         {/* Indicator Dots */}
         <div className="flex items-center space-x-2">
           {slides.map((slide, i) => (

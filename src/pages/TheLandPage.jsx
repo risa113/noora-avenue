@@ -4,31 +4,31 @@ import { projectData } from '../data/projectData';
 
 export default function TheLandPage() {
   return (
-    <div className="py-12 md:py-20 bg-surface">
-      <div className="max-w-screen-2xl mx-auto px-space-md md:px-margin-desktop">
+    <div className="py-10 sm:py-16 md:py-20 bg-surface">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-space-md md:px-margin-desktop">
         
         {/* Page Header */}
-        <div className="mb-14">
-          <div className="flex items-center space-x-2 mb-3">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
+        <div className="mb-10 sm:mb-14">
+          <div className="flex items-center space-x-2 mb-2 sm:mb-3">
+            <span className="font-label-sm text-xs sm:text-label-sm uppercase tracking-widest text-secondary">
               Land Pedigree &amp; Statutory Validation
             </span>
           </div>
-          <h1 className="font-display-xl-mobile md:font-display-xl text-primary font-normal leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-display-xl font-display-xl text-primary font-normal leading-tight mb-4">
             The Land &amp; Stewardship
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+          <p className="font-body-lg text-sm sm:text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
             A considered 900.00 Sq.M residential sanctuary in Kokkadikulam Scheme No: 2, Melapalayam, planned to honor natural topography, groundwater hydrology, and legal transparency.
           </p>
-          <div className="w-16 h-px bg-secondary mt-6"></div>
+          <div className="w-16 h-px bg-secondary mt-5 sm:mt-6"></div>
         </div>
 
         {/* Pull Quote */}
-        <div className="max-w-4xl mb-16 p-8 bg-surface-container-low joinery-border">
-          <blockquote className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary italic leading-relaxed">
+        <div className="max-w-4xl mb-12 sm:mb-16 p-6 sm:p-8 bg-surface-container-low joinery-border">
+          <blockquote className="text-xl sm:text-2xl md:text-headline-lg font-headline-lg text-primary italic leading-relaxed">
             "Land is not merely property; it is an enduring relationship with topography, light, and natural heritage."
           </blockquote>
-          <p className="font-body-md text-secondary mt-3">
+          <p className="font-body-md text-xs sm:text-sm text-secondary mt-3">
             — "இன்று வாங்கும் நிலம், நாளை உங்கள் பெரிய சொத்து!" (Invest today in soil that anchors future generations)
           </p>
         </div>

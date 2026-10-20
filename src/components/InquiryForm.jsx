@@ -119,7 +119,7 @@ export default function InquiryForm({ preselectedPlot, isCompact = false }) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-surface-container-lowest joinery-border shadow-sm p-6 sm:p-10 md:p-12">
+    <div className="max-w-3xl mx-auto bg-surface-container-lowest joinery-border shadow-sm p-4 sm:p-8 md:p-12">
       
       {/* Form Header Badge */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 joinery-border-b">

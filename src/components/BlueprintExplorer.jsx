@@ -66,11 +66,11 @@ export default function BlueprintExplorer({ onSelectPlot }) {
       <div className="lg:col-span-8 bg-surface-container-lowest joinery-border relative overflow-hidden flex flex-col shadow-sm">
         
         {/* Map Toolbar */}
-        <div className="flex flex-wrap items-center justify-between px-4 py-3 bg-surface joinery-border-b text-xs gap-3">
+        <div className="flex flex-wrap items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-surface joinery-border-b text-xs gap-2 sm:gap-3">
           <div className="flex items-center space-x-2">
             <span className="material-symbols-outlined text-secondary text-base">architecture</span>
-            <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary">
-              Order: SWP/104/2024 • Kokkadikulam Scheme No: 2 (7 Plots)
+            <span className="font-label-sm text-[11px] sm:text-label-sm uppercase tracking-wider text-primary">
+              SWP/104/2024 • Scheme No: 2 (7 Plots)
             </span>
           </div>
 
@@ -128,9 +128,42 @@ export default function BlueprintExplorer({ onSelectPlot }) {
           </div>
         </div>
 
+        {/* Mobile & Touch Quick Plot Selector Bar */}
+        <div className="bg-surface-container-low px-3 py-2 joinery-border-b flex items-center gap-1.5 overflow-x-auto text-xs">
+          <span className="font-label-sm text-[10px] uppercase text-outline shrink-0 mr-1 hidden sm:inline">
+            Quick Select:
+          </span>
+          {["1", "2", "3", "4", "5", "6", "7"].map((id) => {
+            const isSel = activePlotId === id;
+            return (
+              <button
+                key={id}
+                onClick={() => handlePlotClick(id)}
+                className={`shrink-0 px-2.5 py-1 text-xs font-tabular-spec font-semibold transition-all rounded ${
+                  isSel
+                    ? 'bg-primary text-white shadow-xs'
+                    : 'bg-surface-container-lowest text-primary border border-outline-variant hover:bg-surface-variant'
+                }`}
+              >
+                Plot {id.padStart(2, '0')}
+              </button>
+            );
+          })}
+          <button
+            onClick={() => handlePlotClick("road")}
+            className={`shrink-0 px-2.5 py-1 text-xs font-tabular-spec font-medium transition-all rounded ${
+              activePlotId === "road"
+                ? 'bg-secondary text-white'
+                : 'bg-surface-container-lowest text-secondary border border-secondary/30 hover:bg-secondary/10'
+            }`}
+          >
+            23-Ft Road
+          </button>
+        </div>
+
         {/* Viewport with Pan & Zoom */}
         <div
-          className="relative w-full h-[520px] sm:h-[620px] bg-[#f4ece1] overflow-hidden cursor-grab active:cursor-grabbing select-none flex items-center justify-center"
+          className="relative w-full h-[440px] sm:h-[580px] lg:h-[620px] bg-[#f4ece1] overflow-hidden cursor-grab active:cursor-grabbing select-none flex items-center justify-center"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
@@ -249,8 +282,8 @@ export default function BlueprintExplorer({ onSelectPlot }) {
       </div>
 
       {/* Synchronized Plot Details Inspector Panel (Col 4) */}
-      <div className="lg:col-span-4 bg-surface-container-lowest joinery-border p-6 md:p-8 shadow-sm">
-        <div className="joinery-border-b pb-6 mb-6">
+      <div className="lg:col-span-4 bg-surface-container-lowest joinery-border p-4 sm:p-6 md:p-8 shadow-sm">
+        <div className="joinery-border-b pb-4 sm:pb-6 mb-4 sm:mb-6">
           <div className="flex items-center justify-between mb-2">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
               {activeData.meta}
@@ -259,10 +292,10 @@ export default function BlueprintExplorer({ onSelectPlot }) {
               {activeData.badge}
             </span>
           </div>
-          <h3 className="font-headline-lg text-headline-lg text-primary">
+          <h3 className="text-2xl sm:text-headline-lg font-headline-lg text-primary">
             {activeData.title}
           </h3>
-          <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          <p className="font-body-sm text-xs sm:text-body-sm text-on-surface-variant mt-1">
             {activeData.desc}
           </p>
         </div>

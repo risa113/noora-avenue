@@ -20,10 +20,10 @@ export default function Navbar() {
         
         {/* Brand Logo Anchor */}
         <Link to="/" className="flex flex-col group py-1" onClick={() => setMobileMenuOpen(false)}>
-          <span className="font-display-lg text-headline-sm md:text-headline-md tracking-wider uppercase text-primary">
+          <span className="font-display-lg text-lg sm:text-headline-sm md:text-headline-md tracking-wider uppercase text-primary leading-tight">
             {projectData.brandName}
           </span>
-          <span className="font-label-sm text-[10px] tracking-widest text-outline uppercase -mt-1">
+          <span className="font-label-sm text-[9px] sm:text-[10px] tracking-widest text-outline uppercase -mt-0.5 sm:-mt-1">
             {projectData.brandSubtitle}
           </span>
         </Link>
@@ -93,13 +93,22 @@ export default function Navbar() {
               {item.name}
             </NavLink>
           ))}
-          <div className="pt-4 joinery-border-t">
+          <div className="pt-4 joinery-border-t space-y-3">
             <a
-              className="inline-flex items-center space-x-2 text-secondary font-tabular-spec text-sm pl-2"
+              className="flex items-center justify-center space-x-2 bg-[#25D366] text-white py-2.5 px-4 rounded font-label-sm text-xs font-semibold shadow-xs"
+              href={projectData.contact.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="material-symbols-outlined text-base">chat</span>
+              <span>WhatsApp: {projectData.contact.phone}</span>
+            </a>
+            <a
+              className="flex items-center justify-center space-x-2 text-secondary font-tabular-spec text-xs py-1"
               href={`tel:${projectData.contact.phoneTel}`}
             >
-              <span className="material-symbols-outlined text-base">call</span>
-              <span>{projectData.contact.phone}</span>
+              <span className="material-symbols-outlined text-sm">call</span>
+              <span>Direct Call: {projectData.contact.phone}</span>
             </a>
           </div>
         </div>

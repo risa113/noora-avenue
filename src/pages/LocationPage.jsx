@@ -4,20 +4,20 @@ import { projectData } from '../data/projectData';
 
 export default function LocationPage() {
   return (
-    <div className="py-12 md:py-20 bg-surface-container-low">
-      <div className="max-w-screen-2xl mx-auto px-space-md md:px-margin-desktop">
+    <div className="py-10 sm:py-16 md:py-20 bg-surface-container-low">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-space-md md:px-margin-desktop">
         
         {/* Page Header */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <div className="flex items-center space-x-2 mb-2">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
+            <span className="font-label-sm text-[11px] sm:text-label-sm uppercase tracking-widest text-secondary">
               Kokkadikulam Scheme No: 2 • Melapalayam Ward
             </span>
           </div>
-          <h1 className="font-display-xl-mobile md:font-display-xl text-primary font-normal leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-display-xl font-display-xl text-primary font-normal leading-tight">
             Territory &amp; Regional Connectivity
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mt-2">
+          <p className="font-body-lg text-sm sm:text-body-lg text-on-surface-variant max-w-3xl mt-2 leading-relaxed">
             Positioned in Kokkadikulam Scheme No: 2, Noora Avenue 2 delivers natural tranquility while maintaining immediate access to educational institutions, places of worship, and commercial corridors.
           </p>
         </div>

@@ -7,22 +7,22 @@ export default function PlotLayoutPage() {
   const plotList = ["1", "2", "3", "4", "5", "6", "7"].map((id) => parcelData[id]);
 
   return (
-    <div className="py-12 md:py-20 bg-surface-container-low">
-      <div className="max-w-screen-2xl mx-auto px-space-md md:px-margin-desktop">
+    <div className="py-10 sm:py-16 md:py-20 bg-surface-container-low">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-space-md md:px-margin-desktop">
         
         {/* Page Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4 sm:gap-6">
           <div>
             <div className="flex items-center space-x-2 mb-2">
-              <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
+              <span className="font-label-sm text-[11px] sm:text-label-sm uppercase tracking-widest text-secondary">
                 Drawing No: SWP/104/2024 • Scale 1:400 Cadastral Master
               </span>
             </div>
-            <h1 className="font-display-xl-mobile md:font-display-xl text-primary font-normal leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-display-xl font-display-xl text-primary font-normal leading-tight">
               Interactive 7-Plot Subdivision Explorer
             </h1>
           </div>
-          <p className="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          <p className="font-body-sm text-xs sm:text-body-sm text-on-surface-variant max-w-md leading-relaxed">
             Click or touch any parcel on the verified surveyor subdivision blueprint below to examine frontage, individual depths, orientation, and availability status.
           </p>
         </div>
