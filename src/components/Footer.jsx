@@ -92,6 +92,45 @@ export default function Footer() {
             </button>
           </div>
         </div>
+
+        {/* Agency Attribution & Official Backlink */}
+        <div className="joinery-border-t pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+            <span className="font-body-sm text-on-surface-variant text-xs">
+              Designed and developed by
+            </span>
+            <a
+              href="https://tmdigitalgrow.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/60 hover:border-[#9a6538] hover:bg-surface hover:shadow-md transition-all duration-300"
+              title="TM Digital Marketing — Official Agency Website"
+            >
+              <span className="font-tm-luxury font-bold text-sm tracking-widest text-[#7a481c] group-hover:text-[#9a6538] transition-colors">
+                TM Digital
+              </span>
+              <span className="font-body-sm font-semibold text-primary text-xs tracking-normal">
+                Marketing
+              </span>
+              <span className="material-symbols-outlined text-[13px] text-[#7a481c] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">
+                arrow_outward
+              </span>
+            </a>
+          </div>
+
+          <div className="flex items-center gap-2 text-[11px] text-outline">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#54634a]"></span>
+            <span>Agency Backlink:</span>
+            <a
+              href="https://tmdigitalgrow.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-secondary hover:text-primary transition-colors underline decoration-outline-variant hover:decoration-primary"
+            >
+              tmdigitalgrow.com
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
