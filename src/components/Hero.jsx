@@ -16,27 +16,35 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
       isBlueprint: true
     },
     {
+      id: 'drone-aerial',
+      title: 'Actual Site Drone Aerial Survey',
+      badge: '900 Sq.M • 0.22 Acre',
+      subtitle: 'Real Aerial Photograph of the 7 Demarcated Plots & Roads',
+      image: asset('/assets/images/real_site_aerial_drone.jpg'),
+      isBlueprint: false
+    },
+    {
+      id: 'ground-stones',
+      title: 'Actual Ground View & Boundary Stones',
+      badge: 'Survey Stones Laid',
+      subtitle: 'Real Ground View of Demarcated Plot Corners and Road Frontage',
+      image: asset('/assets/images/real_site_ground_stones.jpg'),
+      isBlueprint: false
+    },
+    {
+      id: 'boundary-view',
+      title: 'Actual Site Demarcated Landscape',
+      badge: '7.00M Road Access',
+      subtitle: '42.20 Meters Total West Frontage with Instant Vehicle Access',
+      image: asset('/assets/images/real_site_boundary_view.jpg'),
+      isBlueprint: false
+    },
+    {
       id: 'satellite',
       title: 'Satellite Ground View',
       badge: 'GPS: 8.6844° N, 77.7131° E',
       subtitle: 'Kokkadikulam Village, 500m from Annai Hajira Women\'s College',
       image: asset('/assets/images/melapalayam_satellite_close.jpg'),
-      isBlueprint: false
-    },
-    {
-      id: 'aerial',
-      title: 'Aerial Cadastral Demarcation',
-      badge: '900 Sq.M • 0.22 Acre',
-      subtitle: 'Demarcated Residential Plots with Clear Survey Stones',
-      image: asset('/assets/images/land_aerial_survey.jpg'),
-      isBlueprint: false
-    },
-    {
-      id: 'road',
-      title: '7.00-Meter Existing Road Frontage',
-      badge: 'TS No: 13/107 Road',
-      subtitle: '42.20 Meters Total West Frontage with Instant Vehicle Access',
-      image: asset('/assets/images/land_ground_view.jpg'),
       isBlueprint: false
     }
   ];

@@ -21,8 +21,8 @@ export default function ProjectIntro({ projectData, onOpenLayoutModal }) {
             <div className="relative rounded-2xl overflow-hidden bg-[#F5F3EE] p-3 border border-[#EDE9E1] card-shadow group">
               <div className="relative overflow-hidden rounded-xl">
                 <img
-                  src="/assets/images/land_aerial_survey.jpg"
-                  alt="Noora Avenue Demarcated Plotted Land Development"
+                  src="/assets/images/real_site_aerial_drone.jpg"
+                  alt="Noora Avenue Actual Demarcated Plotted Land Development"
                   className="w-full h-[380px] sm:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/60 via-transparent to-transparent opacity-60" />

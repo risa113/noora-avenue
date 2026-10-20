@@ -16,7 +16,7 @@ export default function Gallery({ projectData, onOpenLightbox }) {
               Property & layout gallery
             </h2>
             <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-              Architectural concepts, official layout drawings, and government sanction records.
+              Actual on-site drone photography, physical ground boundary stones, and DTCP approved subdivision blueprint.
             </p>
           </div>
         </div>

@@ -13,6 +13,7 @@ import { asset } from '../utils/assetUrl';
  * Total Area: 900.00 Sq.M (0.22 Acre / 22.24 Cents)
  * Total Sanctioned Plots: 7 Plots (Plot 01 to Plot 07)
  * Road: 7.00M Existing Road (நிலையான சாலை 7.00மீ, TS No: 13/107)
+ * Strictly Real Site Photos & Approved Blueprint Only
  */
 
 export const projectData = {
@@ -29,7 +30,7 @@ export const projectData = {
   tamilQuote: "இன்று வாங்கும் நிலம், நாளை உங்கள் பெரிய சொத்து!",
   promotionalTagline: "Book your residential plot today!",
 
-  // Contact Information (Sole Authorized Contact Number)
+  // Sole Authorized Contact Information
   contact: {
     primaryPhone: "94432 83369",
     primaryPhoneFormatted: "+91 94432 83369",
@@ -54,7 +55,7 @@ export const projectData = {
       north: "Approved Layout No: 25/2019 • ச.எண்: 14/1C • நகரளவை எண்: 13/3 (21.60M)",
       south: "Approved Layout No: 25/2019 • ச.எண்: 14/1N • நகரளவை எண்: 13/9 (20.20M)",
       east: "Approved Layout No: 25/2019 • ச.எண்: 14/1I • நகரளவை எண்: 13/8 (43.00M)",
-      west: "நிலையிலுள்ள சாலை 7.00மீ • நகரளவை எண்: 13/107 (42.20M Frontage)"
+      west: "நிலையான சாலை 7.00மீ • நகரளவை எண்: 13/107 (42.20M Frontage)"
     },
     coordinates: {
       lat: 8.684444,
@@ -111,24 +112,24 @@ export const projectData = {
     }
   ],
 
-  // Acquisition Workflow Steps
+  // Acquisition Workflow Steps (All Real Site Photos & Blueprint)
   workflowSteps: [
     {
       id: "step-1",
       stepNumber: "01",
       title: "Request & Requirements",
-      description: "Connect with our authorized promoters to register your residential plot requirement, desired frontage, and budget in Kokkadikulam / Melapalayam.",
+      description: "Connect with our authorized promoter to register your residential plot requirement, desired frontage, and budget in Kokkadikulam / Melapalayam.",
       actionText: "Request Plot Callback",
-      image: asset("/assets/images/melapalayam_satellite_location.jpg"),
+      image: asset("/assets/images/real_site_aerial_drone.jpg"),
       blueprintBadge: "Consultation Phase"
     },
     {
       id: "step-2",
       stepNumber: "02",
       title: "Plot Selection & On-Site Walkthrough",
-      description: "Explore 7 residential Plots (01 to 07) with exact boundary measurements, 7.00-meter road frontage, and cadastral demarcation.",
+      description: "Explore 7 residential Plots (01 to 07) with exact boundary stones in place, 7.00-meter road frontage, and on-site physical demarcation.",
       actionText: "Inspect 7 Available Plots",
-      image: asset("/assets/images/land_aerial_survey.jpg"),
+      image: asset("/assets/images/real_site_ground_stones.jpg"),
       blueprintBadge: "7.00M Road Frontage"
     },
     {
@@ -146,12 +147,12 @@ export const projectData = {
       title: "Spot Registration & Plot Handover",
       description: "Direct sale deed execution, instant sub-registrar registration, transparent encumbrance-free title transfer, and immediate site possession.",
       actionText: "Book Immediate Registration",
-      image: asset("/assets/images/land_ground_view.jpg"),
+      image: asset("/assets/images/real_site_boundary_view.jpg"),
       blueprintBadge: "Clear Title Assured"
     }
   ],
 
-  // Land & Verification Records
+  // Real Land & Verification Records (Strictly Real Photos & Blueprint — No Stock Images)
   advisors: [
     {
       id: "ver-1",
@@ -162,12 +163,12 @@ export const projectData = {
       phone: "+91 94432 83369",
       phoneTel: "+919443283369",
       image: asset("/assets/images/melapalayam_satellite_close.jpg"),
-      specialty: "Kokkadikulam Village (Scheme No: 2) • Survey No: 14/1J"
+      specialty: "Kokkadikulam Scheme No: 2 • Survey No: 14/1J • Ward AS"
     },
     {
       id: "ver-2",
-      name: "DTCP Sanctioned Layout Map",
-      role: "Sanction SWP/104/2024 & SWP/146/2024",
+      name: "DTCP Sanctioned Layout Blueprint",
+      role: "Sanction Orders SWP/104/2024 & SWP/146/2024",
       rating: "5.0",
       reviewsCount: "Town & Country Planning Approved",
       phone: "+91 94432 83369",
@@ -177,25 +178,25 @@ export const projectData = {
     },
     {
       id: "ver-3",
-      name: "Drone Aerial Land Survey",
-      role: "Survey No: 14/1J, Town Survey No: 13/7",
+      name: "Actual Drone Aerial Site Survey",
+      role: "Actual Site Drone Photograph",
       rating: "5.0",
-      reviewsCount: "Cadastral Boundary Stone Verified",
+      reviewsCount: "Physical Survey Stones In Place",
       phone: "+91 94432 83369",
       phoneTel: "+919443283369",
-      image: asset("/assets/images/land_aerial_survey.jpg"),
+      image: asset("/assets/images/real_site_aerial_drone.jpg"),
       specialty: "900.00 Sq.M (0.22 Acre / 22.24 Cents) • Spot Possession"
     },
     {
       id: "ver-4",
-      name: "7.00-Meter Wide Existing Avenue Road",
-      role: "Town Survey No: 13/107 Road Frontage",
+      name: "Actual Ground View & Boundary Stones",
+      role: "7.00-Meter Road Frontage (TS No: 13/107)",
       rating: "5.0",
-      reviewsCount: "Approved Vehicle Ingress",
+      reviewsCount: "Numbered Boundary Stones Laid",
       phone: "+91 94432 83369",
       phoneTel: "+919443283369",
-      image: asset("/assets/images/land_ground_view.jpg"),
-      specialty: "Direct 42.20M Road Frontage for All 7 Plots • Instant House Construction"
+      image: asset("/assets/images/real_site_ground_stones.jpg"),
+      specialty: "Direct 42.20M Road Frontage for All 7 Plots • Ready for Construction"
     }
   ],
 
@@ -230,7 +231,7 @@ export const projectData = {
     }
   ],
 
-  // Featured Signature Plots
+  // Featured Signature Plots (All Real Site Photos & Blueprint)
   investmentOffers: [
     {
       id: "offer-1",
@@ -240,7 +241,7 @@ export const projectData = {
       roadWidth: "7.00 M (23 Feet)",
       surveyNo: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
       description: "Exceptional southern corner residential plot featuring prominent 6.20M road frontage directly onto the 7.00M existing road. Area of approx 125.86 Sq.M (1,355 Sq.Ft / 3.11 Cents).",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_ground_stones.jpg"),
       dtcpBadge: "SWP/104/2024",
       clearance: "Immediate Registration",
       category: "Southern Prime Corner"
@@ -266,7 +267,7 @@ export const projectData = {
       roadWidth: "7.00 M (23 Feet)",
       surveyNo: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
       description: "Northernmost signature residential plot adjoining approved layout 25/2019 on the north with maximum 21.60M boundary width. Area of approx 129.30 Sq.M (1,392 Sq.Ft / 3.20 Cents).",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_aerial_drone.jpg"),
       dtcpBadge: "Sanctioned Villa Plot",
       clearance: "Instant Possession",
       category: "Northern Prime Villa"
@@ -307,7 +308,7 @@ export const projectData = {
       statusText: "Ready for Sale",
       category: "Southern Prime Corner",
       surveyDetails: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_ground_stones.jpg"),
       areaApprox: "125.86 Sq.M (1,355 Sq.Ft / 3.11 Cents)"
     },
     {
@@ -324,7 +325,7 @@ export const projectData = {
       statusText: "Ready for Sale",
       category: "Standard Residential",
       surveyDetails: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_aerial_drone.jpg"),
       areaApprox: "123.00 Sq.M (1,324 Sq.Ft / 3.04 Cents)"
     },
     {
@@ -341,7 +342,7 @@ export const projectData = {
       statusText: "Ready for Sale",
       category: "Standard Residential",
       surveyDetails: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_boundary_view.jpg"),
       areaApprox: "124.20 Sq.M (1,337 Sq.Ft / 3.07 Cents)"
     },
     {
@@ -375,7 +376,7 @@ export const projectData = {
       statusText: "Ready for Sale",
       category: "Core Residential",
       surveyDetails: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_aerial_drone.jpg"),
       areaApprox: "127.20 Sq.M (1,369 Sq.Ft / 3.14 Cents)"
     },
     {
@@ -392,7 +393,7 @@ export const projectData = {
       statusText: "Ready for Sale",
       category: "Standard Residential",
       surveyDetails: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_ground_stones.jpg"),
       areaApprox: "128.70 Sq.M (1,385 Sq.Ft / 3.18 Cents)"
     },
     {
@@ -409,7 +410,7 @@ export const projectData = {
       statusText: "Ready for Sale",
       category: "Northern Prime Villa",
       surveyDetails: "ச.எண்: 14/1J, நகரளவை எண்: 13/7",
-      image: asset("/assets/images/plot_layout_approved_7plots.png"),
+      image: asset("/assets/images/real_site_boundary_view.jpg"),
       areaApprox: "129.30 Sq.M (1,392 Sq.Ft / 3.20 Cents)"
     }
   ],
@@ -469,7 +470,7 @@ export const projectData = {
     }
   ],
 
-  // Visual Media Gallery — Strictly Land, Satellite Maps, and Official Blueprint Records
+  // Visual Media Gallery — Strictly Real Site Photographs, Satellite Maps, and Official Blueprint
   gallery: [
     {
       id: "gal-1",
@@ -480,52 +481,38 @@ export const projectData = {
     },
     {
       id: "gal-2",
-      title: "DTCP Sanction Order Document (ஒப்புதல் வரைபடம்)",
-      caption: "Govt Sanction Order SWP/104/2024 • Tech Approval SWP/146/2024 • App 7GDMQ9WA/2024",
-      category: "Legal Approval",
-      url: asset("/assets/images/plot_layout_approved_7plots.png")
+      title: "Actual Site Drone Aerial Survey (ட்ரோன் நில அளவை பார்வை)",
+      caption: "Real Drone Aerial Photograph of the 7 Demarcated Plots with Roadway Boundaries",
+      category: "Real Aerial Survey",
+      url: asset("/assets/images/real_site_aerial_drone.jpg")
     },
     {
       id: "gal-3",
-      title: "Actual Satellite Map of Site Area",
+      title: "Actual Ground View & Boundary Stones (எல்லை கற்கள் பார்வை)",
+      caption: "Physical Corner Boundary Stones and Road Access Demarcated on Ground",
+      category: "Real Ground View",
+      url: asset("/assets/images/real_site_ground_stones.jpg")
+    },
+    {
+      id: "gal-4",
+      title: "Actual Site Landscape (நிலத்தின் நேரடி பார்வை)",
+      caption: "Clear View of the Residential Plotted Development at Kokkadikulam Scheme No: 2",
+      category: "Real Site Landscape",
+      url: asset("/assets/images/real_site_boundary_view.jpg")
+    },
+    {
+      id: "gal-5",
+      title: "Actual Satellite Map of Site Area (செயற்கைக்கோள் வரைபடம்)",
       caption: "Kokkadikulam Village & 500m to Annai Hajira Women's College, Melapalayam",
       category: "Satellite Location",
       url: asset("/assets/images/melapalayam_satellite_close.jpg")
     },
     {
-      id: "gal-4",
-      title: "Regional Satellite Overview",
+      id: "gal-6",
+      title: "Regional Satellite Overview (மண்டல வரைபடம்)",
       caption: "Aerial Overview of Melapalayam Ward & Arterial Roadways",
       category: "Aerial Map",
       url: asset("/assets/images/melapalayam_satellite_location.jpg")
-    },
-    {
-      id: "gal-5",
-      title: "Aerial Drone Land Survey & Demarcation",
-      caption: "High-Resolution Drone Overview of Demarcated Residential Plots with Roadway",
-      category: "Aerial Land Survey",
-      url: asset("/assets/images/land_aerial_survey.jpg")
-    },
-    {
-      id: "gal-6",
-      title: "7.00-Meter Wide Avenue Road & Boundary Stones",
-      caption: "Direct Ground Level Photo of the Sanctioned Road and Numbered Demarcated Plots",
-      category: "Road & Ground View",
-      url: asset("/assets/images/land_ground_view.jpg")
-    },
-    {
-      id: "gal-7",
-      title: "Cadastral Satellite Plot Demarcation Map",
-      caption: "Cartographic Satellite Layout with Boundary Outlines and Road Connectivity",
-      category: "Cadastral Map",
-      url: asset("/assets/images/satellite_map_plots.jpg")
-    },
-    {
-      id: "gal-8",
-      title: "Original Reference Sanction Sheet",
-      caption: "Complete Sanction Sheet with Government Seals and Approval Signatures",
-      category: "Official Record",
-      url: asset("/assets/images/plot_layout_approved_7plots.png")
     }
   ],
 

@@ -247,8 +247,8 @@ export default function Location({ locationDetails, projectData }) {
                 ) : (
                   <div className="relative w-full h-full group/img cursor-pointer">
                     <img
-                      src={asset("/assets/images/melapalayam_satellite_close.jpg")}
-                      alt="Scraped Aerial Map of Melapalayam Kokkadikulam Site"
+                      src={asset("/assets/images/real_site_aerial_drone.jpg")}
+                      alt="Actual Drone Aerial View of Melapalayam Kokkadikulam Site"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-neutral-950/20 pointer-events-none" />

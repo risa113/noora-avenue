@@ -61,21 +61,21 @@ export default function SmartSelection({ projectData }) {
           <div className="lg:col-span-7">
             <div className="grid grid-cols-12 gap-4 items-center">
               
-              {/* Image 1: Real Ground Satellite Map */}
+              {/* Image 1: Real Drone Aerial Survey */}
               <div className="col-span-7 relative rounded-3xl overflow-hidden shadow-xl border border-neutral-200 group bg-neutral-900">
                 <img
-                  src={asset("/assets/images/melapalayam_satellite_close.jpg")}
-                  alt="Actual Satellite Location of Noora Avenue Site"
+                  src={asset("/assets/images/real_site_aerial_drone.jpg")}
+                  alt="Actual Drone Aerial Photograph of Noora Avenue Plotted Site"
                   className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md text-left text-xs font-bold text-neutral-900 border border-neutral-200 shadow-sm">
                   <span className="text-[10px] text-sky-700 uppercase block font-extrabold">Kokkadikulam Scheme No: 2</span>
-                  Actual Satellite Aerial Layout Demarcation
+                  Actual Drone Aerial Layout Demarcation (7 Plots)
                 </div>
               </div>
 
-              {/* Image 2 & 3: Sanction Blueprint & Road Infrastructure */}
+              {/* Image 2 & 3: Sanction Blueprint & Real Ground View */}
               <div className="col-span-5 space-y-4">
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-200 group bg-white p-2">
                   <img
@@ -90,7 +90,7 @@ export default function SmartSelection({ projectData }) {
 
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-200 group bg-neutral-100">
                   <img
-                    src={asset("/assets/images/land_ground_view.jpg")}
+                    src={asset("/assets/images/real_site_ground_stones.jpg")}
                     alt="7.00M Existing Road Infrastructure & Demarcated Land Plots in Melapalayam"
                     className="w-full h-40 sm:h-44 object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
