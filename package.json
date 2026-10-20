@@ -1,0 +1,25 @@
+{
+  "name": "noora-avenue-2",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://risa113.github.io/noora-avenue/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.9.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "gh-pages": "^6.3.0",
+    "vite": "^6.4.4"
+  }
+}
