@@ -1,8 +1,0 @@
-# robots.txt for NOORA AVENUE - II
-User-agent: *
-Allow: /
-Allow: /assets/
-Allow: /assets/images/
-
-# Sitemap Location
-Sitemap: https://nooraavenue.com/sitemap.xml
