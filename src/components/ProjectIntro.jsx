@@ -10,7 +10,7 @@ export default function ProjectIntro({ projectData, onOpenLayoutModal }) {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <SectionHeading
           badge="ABOUT THE DEVELOPMENT"
-          title="NOORA AVENUE - II"
+          title="NOORA AVENUE"
           subtitle="A meticulously planned DTCP-approved plotted community engineered for residential prestige and enduring investment assurance."
         />
 
@@ -22,7 +22,7 @@ export default function ProjectIntro({ projectData, onOpenLayoutModal }) {
               <div className="relative overflow-hidden rounded-xl">
                 <img
                   src="/assets/images/land_aerial_survey.jpg"
-                  alt="Noora Avenue - II Demarcated Plotted Land Development"
+                  alt="Noora Avenue Demarcated Plotted Land Development"
                   className="w-full h-[380px] sm:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/60 via-transparent to-transparent opacity-60" />
@@ -32,7 +32,7 @@ export default function ProjectIntro({ projectData, onOpenLayoutModal }) {
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#FAFAF7]/95 backdrop-blur-md border border-[#EDE9E1] shadow-lg flex items-center justify-between">
                 <div>
                   <p className="text-[10px] uppercase tracking-wider font-bold text-[#1B6CA8]">Official Plotted Subdivision</p>
-                  <p className="text-sm font-extrabold text-[#1A2332]">Plots 01 through 08</p>
+                  <p className="text-sm font-extrabold text-[#1A2332]">Plots 01 through 07</p>
                 </div>
                 <button
                   onClick={onOpenLayoutModal}
@@ -46,7 +46,7 @@ export default function ProjectIntro({ projectData, onOpenLayoutModal }) {
             {/* Architectural accent note */}
             <div className="hidden sm:block absolute -bottom-4 -right-2 px-5 py-3 rounded-xl bg-[#FFFFFF] border border-[#EDE9E1] card-shadow">
               <div className="text-[10px] text-[#8896A8] font-bold uppercase tracking-wider">Directorate Clearance</div>
-              <div className="text-sm font-black text-[#1A2332]">Order SWP/68/2024</div>
+              <div className="text-sm font-black text-[#1A2332]">Order SWP/104/2024</div>
             </div>
           </div>
 
@@ -57,11 +57,11 @@ export default function ProjectIntro({ projectData, onOpenLayoutModal }) {
             </h3>
 
             <p className="text-[#4A5568] text-base leading-relaxed mb-4 font-normal">
-              <strong className="text-[#1A2332]">NOORA AVENUE - II</strong> represents a premier plotted layout sanctioned under official DTCP guidelines. Designed to offer maximum privacy, optimum solar orientation, and wide direct roadway frontages, the project provides an uncompromising foundation for custom villa construction.
+              <strong className="text-[#1A2332]">NOORA AVENUE</strong> represents a premier plotted layout sanctioned under official DTCP guidelines. Designed to offer maximum privacy, optimum solar orientation, and wide direct roadway frontages, the project provides an uncompromising foundation for custom villa construction.
             </p>
 
             <p className="text-[#4A5568] text-base leading-relaxed mb-8 font-normal">
-              Every individual plot within this strictly bounded 8-unit development enjoys frontage directly off the 9.15-meter internal avenue, eliminating congested thoroughfares while securing enduring community prestige.
+              Every individual plot within this strictly bounded 7-unit development enjoys frontage directly off the 7.00-meter existing road, eliminating congested thoroughfares while securing enduring community prestige.
             </p>
 
             {/* Verified Statistics Grid */}
@@ -90,7 +90,7 @@ export default function ProjectIntro({ projectData, onOpenLayoutModal }) {
                 “{projectData.tamilQuote}”
               </p>
               <span className="text-[11px] text-[#1B6CA8] font-bold uppercase tracking-wider mt-1.5 block">
-                NOORA AVENUE - II • Residential Opportunities
+                NOORA AVENUE • Residential Opportunities
               </span>
             </div>
 

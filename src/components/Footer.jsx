@@ -31,11 +31,11 @@ export default function Footer({ projectData }) {
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-neutral-200">
               <ShieldCheck className="w-3.5 h-3.5 text-sky-400" />
-              <span>Sanction Order: SWP/68/2024</span>
+              <span>Sanction Order: SWP/104/2024 & SWP/146/2024</span>
             </div>
 
             <p className="text-neutral-400 text-sm leading-relaxed max-w-sm font-light">
-              An exclusive 8-plot DTCP approved residential development. Engineered with 30-feet internal road access, legally certified documentation, and rapid possession.
+              An exclusive 7-plot DTCP approved residential plotted development at Kokkadikulam Scheme No: 2, Melapalayam. Engineered with 7.00-meter road access, legally certified documentation, and rapid spot registration.
             </p>
 
             <p className="text-xs font-tamil text-neutral-300 font-medium">
@@ -50,7 +50,7 @@ export default function Footer({ projectData }) {
             </span>
             <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-400">
               <li><a href="#hero" className="hover:text-white transition-colors">Overview</a></li>
-              <li><a href="#plots-catalog" className="hover:text-white transition-colors">Plots Catalog (1-8)</a></li>
+              <li><a href="#plots-catalog" className="hover:text-white transition-colors">Plots Catalog (1-7)</a></li>
               <li><a href="#advisors" className="hover:text-white transition-colors">Land & Map Records</a></li>
               <li><a href="#layout" className="hover:text-white transition-colors">Subdivision Blueprint</a></li>
               <li><a href="#approvals" className="hover:text-white transition-colors">DTCP Sanction Order</a></li>
@@ -63,7 +63,7 @@ export default function Footer({ projectData }) {
           {/* Official Contact Info & NAP Local SEO */}
           <div className="lg:col-span-4 space-y-4">
             <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white block mb-4">
-              Authorized Representatives & Address
+              Authorized Promoter & Location
             </span>
             
             <div className="space-y-3 text-sm">
@@ -83,16 +83,6 @@ export default function Footer({ projectData }) {
                   {projectData.contact.primaryPhoneFormatted}
                 </a>
               </div>
-
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-sky-400" />
-                <a 
-                  href={`tel:${projectData.contact.secondaryPhoneTel}`}
-                  className="font-bold text-white hover:text-sky-300 transition-colors"
-                >
-                  {projectData.contact.secondaryPhoneFormatted}
-                </a>
-              </div>
             </div>
 
             <div className="pt-2">
@@ -100,37 +90,35 @@ export default function Footer({ projectData }) {
                 href={projectData.contact.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pill-primary bg-white/10 hover:bg-white/15 text-white text-xs py-2.5 px-4 inline-flex items-center gap-2 border border-white/15"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors shadow-sm"
               >
-                <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Chat on WhatsApp</span>
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Instant WhatsApp Callback</span>
               </a>
             </div>
           </div>
 
         </div>
 
-        {/* Disclaimer & Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-500">
-          
-          <div className="text-left max-w-3xl">
-            <p className="leading-relaxed">
-              <strong className="text-neutral-400">Disclaimer:</strong> Information displayed on this portal is strictly based on official project documents and government sanctions. All measurements and layout provisions correspond to DTCP technical sanction order SWP/68/2024.
-            </p>
-            <p className="mt-2 text-neutral-500">
-              © {new Date().getFullYear()} {projectData.brandName} {projectData.projectTitle}. All rights reserved. DTCP Approved Layout.
-            </p>
-          </div>
+        {/* Bottom Strip */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+          <p>
+            © {new Date().getFullYear()} {projectData.fullProjectName}. All rights reserved. DTCP Sanction Orders: SWP/104/2024 & SWP/146/2024.
+          </p>
 
           <button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white border border-white/10 transition-colors shrink-0"
-            title="Scroll to Top"
-            aria-label="Scroll to top of page"
+            className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors"
+            aria-label="Scroll to top"
           >
-            <ArrowUp className="w-4 h-4" />
+            <span>Back to Top</span>
+            <ArrowUp className="w-3.5 h-3.5" />
           </button>
+        </div>
 
+        {/* Legal Disclaimer */}
+        <div className="mt-6 pt-6 border-t border-neutral-800 text-[11px] text-neutral-600 leading-relaxed font-light">
+          <strong className="text-neutral-400">Disclaimer:</strong> Information displayed on this portal is strictly based on official project documents and government sanctions. All measurements and layout provisions correspond to DTCP technical sanction orders SWP/104/2024 and SWP/146/2024 (Online App: 7GDMQ9WA/2024) issued by the Directorate of Town and Country Planning / Tirunelveli Local Planning Authority.
         </div>
 
       </div>

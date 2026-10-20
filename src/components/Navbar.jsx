@@ -14,8 +14,8 @@ export default function Navbar({ projectData }) {
   }, []);
 
   const navLinks = [
-    { label: "Overview", href: "#overview" },
-    { label: "Plots (1-8)", href: "#plots-catalog" },
+    { label: "Overview", href: "#hero" },
+    { label: "Plots (1-7)", href: "#plots-catalog" },
     { label: "Land & Map Records", href: "#advisors" },
     { label: "Sanctioned Blueprint", href: "#layout" },
     { label: "Approvals", href: "#approvals" },
@@ -48,7 +48,7 @@ export default function Navbar({ projectData }) {
                 </span>
                 <span className="w-1 h-1 rounded-full bg-sky-500" />
                 <span className="text-[9px] font-semibold text-sky-700 uppercase tracking-wider">
-                  DTCP
+                  DTCP APPROVED
                 </span>
               </div>
             </div>
@@ -98,50 +98,48 @@ export default function Navbar({ projectData }) {
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-full border border-neutral-200 text-neutral-800 hover:bg-neutral-100 transition-colors"
-              aria-label="Toggle navigation"
+              className="p-2 text-neutral-800 hover:text-neutral-950 rounded-lg hover:bg-neutral-100 transition-colors"
+              aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-neutral-200 px-6 py-6 shadow-xl animate-fade-in">
-          <div className="flex flex-col gap-1">
+        <div className="lg:hidden bg-white/98 backdrop-blur-md border-b border-neutral-200 px-5 pt-3 pb-6 space-y-4 shadow-lg text-left">
+          <nav className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-semibold text-neutral-700 hover:text-neutral-950 py-3 border-b border-neutral-100 flex items-center justify-between"
+                className="px-3 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-100 rounded-xl transition-colors"
               >
-                <span>{link.label}</span>
-                <ChevronRight className="w-4 h-4 text-neutral-400" />
+                {link.label}
               </a>
             ))}
-
-            <div className="pt-5 flex flex-col gap-3">
-              <a
-                href={projectData.contact.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-full bg-emerald-50 text-emerald-800 font-bold text-sm border border-emerald-200"
-              >
-                WhatsApp Inquiry
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-full bg-neutral-900 text-white font-bold text-sm shadow-md"
-              >
-                Book Your Plot
-              </a>
-            </div>
+          </nav>
+          
+          <div className="pt-3 border-t border-neutral-100 flex flex-col gap-2">
+            <a
+              href={`tel:${projectData.contact.primaryPhoneTel}`}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full border border-neutral-300 text-xs font-bold text-neutral-900 bg-neutral-50"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Call {projectData.contact.primaryPhone}</span>
+            </a>
+            
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full btn-pill-primary py-3 text-xs justify-center"
+            >
+              <span>Book Site Visit</span>
+            </a>
           </div>
         </div>
       )}

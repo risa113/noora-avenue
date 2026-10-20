@@ -46,7 +46,7 @@ export default function App() {
     openLightbox(
       projectData.layoutInfo.image,
       "Official Subdivision Layout Drawing (மனை உட்பிரிவு வரைபடம்)",
-      "Sanctioned Plan • Scale 1:400 • Plots 1 to 8 • Road Width 9.15M • SWP/68/2024"
+      "Sanctioned Plan • Scale 1:400 • Plots 1 to 7 • 7.00M Road • SWP/104/2024 & SWP/146/2024"
     );
   };
 
@@ -99,7 +99,7 @@ export default function App() {
           projectData={projectData}
         />
 
-        {/* 8. Available Residential Plots (01 - 08) Catalog Grid (Video 00:09 - 00:12) */}
+        {/* 8. Available Residential Plots (01 - 07) Catalog Grid (Video 00:09 - 00:12) */}
         <PlotCatalog
           projectData={projectData}
           onOpenLightbox={openLightbox}

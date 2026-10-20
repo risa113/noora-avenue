@@ -21,15 +21,15 @@ export default function SmartSelection({ projectData }) {
             </h2>
 
             <p className="text-base text-neutral-600 leading-relaxed font-normal">
-              We offer a curated selection of residential plots — from corner plots with generous dual road access to quiet cul-de-sac plots — each chosen for its clear DTCP title, optimal orientation, and immediate building readiness.
+              We offer a curated selection of 7 residential plots — from corner plots with generous road frontage to peaceful villa plots — each chosen for its clear DTCP title, optimal west-facing road frontage, and immediate building readiness.
             </p>
 
             <div className="space-y-3 pt-2">
               {[
-                "Strict DTCP Technical Sanction SWP/68/2024",
-                "Wide 9.15-meter (30 ft) internal avenue road connectivity",
+                "Strict DTCP Technical Sanctions SWP/104/2024 & SWP/146/2024",
+                "7.00-meter (23 ft) wide existing road connectivity (TS No: 13/107)",
                 "Clear surveyed boundaries with individual subdivision demarcation",
-                "Situated just 500 meters from Annai Hajira Women's College"
+                "Situated at Kokkadikulam Scheme No: 2, near Annai Hajira Women's College"
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-sm text-neutral-800 font-medium">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -43,7 +43,7 @@ export default function SmartSelection({ projectData }) {
                 href="#plots-catalog"
                 className="btn-pill-primary px-6 py-3.5 text-xs"
               >
-                <span>Inspect 8 Available Plots</span>
+                <span>Inspect 7 Available Plots</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
 
@@ -65,12 +65,12 @@ export default function SmartSelection({ projectData }) {
               <div className="col-span-7 relative rounded-3xl overflow-hidden shadow-xl border border-neutral-200 group bg-neutral-900">
                 <img
                   src={asset("/assets/images/melapalayam_satellite_close.jpg")}
-                  alt="Actual Satellite Location of Noora Avenue II Site"
+                  alt="Actual Satellite Location of Noora Avenue Site"
                   className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md text-left text-xs font-bold text-neutral-900 border border-neutral-200 shadow-sm">
-                  <span className="text-[10px] text-sky-700 uppercase block font-extrabold">Kokkattikulam Ground View</span>
+                  <span className="text-[10px] text-sky-700 uppercase block font-extrabold">Kokkadikulam Scheme No: 2</span>
                   Actual Satellite Aerial Layout Demarcation
                 </div>
               </div>
@@ -79,8 +79,8 @@ export default function SmartSelection({ projectData }) {
               <div className="col-span-5 space-y-4">
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-200 group bg-white p-2">
                   <img
-                    src={asset("/assets/images/plot_layout_scan.png")}
-                    alt="Sanctioned Subdivision Drawing"
+                    src={asset("/assets/images/plot_layout_approved_7plots.png")}
+                    alt="Sanctioned Subdivision Drawing SWP/104/2024"
                     className="w-full h-44 sm:h-52 object-contain group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-neutral-900 text-white text-[10px] font-bold shadow-xs">
@@ -91,12 +91,12 @@ export default function SmartSelection({ projectData }) {
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-200 group bg-neutral-100">
                   <img
                     src={asset("/assets/images/land_ground_view.jpg")}
-                    alt="30 Ft Internal Avenue Road Infrastructure & Demarcated Land Plots in Melapalayam"
+                    alt="7.00M Existing Road Infrastructure & Demarcated Land Plots in Melapalayam"
                     className="w-full h-40 sm:h-44 object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
                   <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-neutral-900/90 text-white text-[10px] font-bold shadow-xs">
-                    9.15M (30 Ft) Road
+                    7.00M (23 Ft) Road
                   </div>
                 </div>
               </div>

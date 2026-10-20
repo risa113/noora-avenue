@@ -10,7 +10,7 @@ export default function InvestmentMetrics({ projectData }) {
     <section id="investment-metrics" className="py-20 lg:py-28 bg-white border-t border-neutral-200/70 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         
-        {/* Section Header (Video 00:04 style) */}
+        {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-14 text-left">
           <div className="lg:col-span-6">
             <span className="text-[11px] font-bold uppercase tracking-widest text-sky-700 block mb-2">
@@ -22,12 +22,12 @@ export default function InvestmentMetrics({ projectData }) {
           </div>
           <div className="lg:col-span-6">
             <p className="text-sm sm:text-base text-neutral-500 leading-relaxed font-normal">
-              Our land parcels are not just square meters — they represent an enduring, legally safeguarded foundation for your capital. DTCP Technical Sanction SWP/68/2024 guarantees clean title, no encumbrances, and verified development parameters.
+              Our land parcels are not just square meters — they represent an enduring, legally safeguarded foundation for your capital. DTCP Technical Sanctions SWP/104/2024 & SWP/146/2024 guarantee clean title, no encumbrances, and verified development parameters.
             </p>
           </div>
         </div>
 
-        {/* 3 Metric Cards with Interactive Animated Bar Charts (Video 00:04) */}
+        {/* 3 Metric Cards with Interactive Animated Bar Charts */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           {metrics.map((item, idx) => (
             <div
@@ -56,7 +56,7 @@ export default function InvestmentMetrics({ projectData }) {
                 </p>
               </div>
 
-              {/* Animated Mini Bar Chart Visualization (Video 00:04) */}
+              {/* Animated Mini Bar Chart Visualization */}
               <div className="pt-8 mt-6 border-t border-neutral-200/70">
                 <div className="h-16 flex items-end gap-2.5 px-1">
                   {item.bars.map((barHeight, bIdx) => {
@@ -101,10 +101,10 @@ export default function InvestmentMetrics({ projectData }) {
               Official Directorate Clearance
             </span>
             <h4 className="text-lg font-bold text-white">
-              Town and Country Planning Sanction: SWP/68/2024
+              Town and Country Planning Sanction: SWP/104/2024 & SWP/146/2024
             </h4>
             <p className="text-xs text-neutral-400 max-w-2xl font-light">
-              Park reservation fee of Rs. 67,980/- fully remitted on 08.08.2024 under TNCDBR Rule 47(6). Complete documentation ready for title scrutiny.
+              Park reservation fee of Rs. 54,090.00 fully remitted on 18.12.2024 under TNCDBR Rule 47(6). Complete documentation ready for immediate title scrutiny and spot registration.
             </p>
           </div>
 

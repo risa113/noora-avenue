@@ -97,7 +97,7 @@ export default function ImageLightbox({ isOpen, onClose, imageSrc, title, subtit
 
         {/* Footer controls & info */}
         <div className="px-6 py-3 bg-white border-t border-neutral-200 flex flex-wrap items-center justify-between text-xs text-neutral-500">
-          <span className="font-semibold">NOORA AVENUE - II • Sanction Order: SWP/68/2024</span>
+          <span className="font-semibold">NOORA AVENUE • Sanction Orders: SWP/104/2024 & SWP/146/2024</span>
           <span>Click outside or press Esc to close • Use zoom controls for minute details</span>
         </div>
       </div>

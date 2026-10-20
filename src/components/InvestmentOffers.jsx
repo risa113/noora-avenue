@@ -19,7 +19,7 @@ export default function InvestmentOffers({ projectData, onOpenLightbox }) {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-neutral-600 max-w-md font-medium">
-            Handpicked signature residential plot parcels within NOORA AVENUE - II selected for highest custom construction potential and immediate sub-registrar registration.
+            Handpicked signature residential plot parcels within NOORA AVENUE selected for highest custom construction potential and immediate sub-registrar registration.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function InvestmentOffers({ projectData, onOpenLightbox }) {
                 <img
                   src={offer.image}
                   alt={offer.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 rounded-xl"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 rounded-xl"
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-extrabold uppercase tracking-wider text-neutral-900 shadow-xs">
                   {offer.plotNumber}
@@ -51,7 +51,7 @@ export default function InvestmentOffers({ projectData, onOpenLightbox }) {
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-sky-700">{offer.plotNumber}</span>
                   <span className="text-neutral-300">•</span>
-                  <span className="text-xs text-neutral-500 font-medium">Kokkattikulam, Melapalayam</span>
+                  <span className="text-xs text-neutral-500 font-medium font-tamil">கொக்கடிகுளம் கிராமம் • மேலப்பாளையம்</span>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-900 tracking-tight">
@@ -85,7 +85,7 @@ export default function InvestmentOffers({ projectData, onOpenLightbox }) {
                   </a>
 
                   <button
-                    onClick={() => onOpenLightbox(projectData.layoutInfo.image, `${offer.plotNumber} Blueprint`, "Official Subdivision Layout Map SWP/68/2024")}
+                    onClick={() => onOpenLightbox(projectData.layoutInfo.image, `${offer.plotNumber} Blueprint`, "Official Subdivision Layout Map SWP/104/2024 & SWP/146/2024")}
                     className="btn-pill-secondary text-xs py-2.5 px-4"
                   >
                     <Download className="w-3.5 h-3.5 text-neutral-600" />
@@ -103,7 +103,7 @@ export default function InvestmentOffers({ projectData, onOpenLightbox }) {
                   <div className="text-base font-extrabold text-neutral-900 mt-0.5">
                     {offer.dtcpBadge}
                   </div>
-                  <span className="text-[11px] text-neutral-500 font-medium">SWP/68/2024</span>
+                  <span className="text-[11px] text-neutral-500 font-medium">SWP/104/2024</span>
                 </div>
 
                 <div>
@@ -119,10 +119,10 @@ export default function InvestmentOffers({ projectData, onOpenLightbox }) {
 
                 <div className="pt-2">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-1">
-                    Internal Avenue
+                    Existing Road Access
                   </span>
                   <span className="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full inline-block">
-                    30 Ft (9.15M) Wide Access
+                    23 Ft (7.00M) Road Access
                   </span>
                 </div>
               </div>

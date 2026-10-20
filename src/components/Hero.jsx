@@ -1,18 +1,69 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, ChevronRight, Compass, FileText, Layers, MapPin, Navigation, Phone, Search } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight, FileText, Layers, MapPin, Navigation, Phone, Search } from 'lucide-react';
 import { asset } from '../utils/assetUrl';
 
 export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilter }) {
   const [activeTab, setActiveTab] = useState('all');
-  const [viewMode, setViewMode] = useState('satellite'); // 'satellite' | 'blueprint'
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  const heroSlides = [
+    {
+      id: 'blueprint',
+      title: 'DTCP Sanctioned Blueprint (Scale 1:400)',
+      badge: 'Order SWP/104/2024',
+      subtitle: 'Official 7-Plot Subdivision Layout Plan • Kokkadikulam Scheme No: 2',
+      image: asset('/assets/images/plot_layout_approved_7plots.png'),
+      isBlueprint: true
+    },
+    {
+      id: 'satellite',
+      title: 'Satellite Ground View',
+      badge: 'GPS: 8.6844° N, 77.7131° E',
+      subtitle: 'Kokkadikulam Village, 500m from Annai Hajira Women\'s College',
+      image: asset('/assets/images/melapalayam_satellite_close.jpg'),
+      isBlueprint: false
+    },
+    {
+      id: 'aerial',
+      title: 'Aerial Cadastral Demarcation',
+      badge: '900 Sq.M • 0.22 Acre',
+      subtitle: 'Demarcated Residential Plots with Clear Survey Stones',
+      image: asset('/assets/images/land_aerial_survey.jpg'),
+      isBlueprint: false
+    },
+    {
+      id: 'road',
+      title: '7.00-Meter Existing Road Frontage',
+      badge: 'TS No: 13/107 Road',
+      subtitle: '42.20 Meters Total West Frontage with Instant Vehicle Access',
+      image: asset('/assets/images/land_ground_view.jpg'),
+      isBlueprint: false
+    }
+  ];
 
   const filterTabs = [
-    { id: 'all', label: 'All Plots (8)' },
-    { id: 'corner', label: 'Corner Plots' },
-    { id: 'central', label: 'Central Prime' },
-    { id: 'standard', label: 'Standard Plots' },
-    { id: 'villa', label: 'Northern Villa' }
+    { id: 'all', label: 'All Plots (7)' },
+    { id: 'corner', label: 'Southern Corner (Plot 01)' },
+    { id: 'central', label: 'Central Prime (Plots 04, 05)' },
+    { id: 'standard', label: 'Standard Plots (Plots 02, 03, 06)' },
+    { id: 'villa', label: 'Northern Villa (Plot 07)' }
   ];
+
+  // Auto-advance slides every 6s
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlideIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
+  const handleNextSlide = () => {
+    setCurrentSlideIndex((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentSlideIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
 
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
@@ -27,6 +78,8 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const activeSlide = heroSlides[currentSlideIndex];
 
   return (
     <section id="hero" className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 bg-[#FAFAF9] overflow-hidden">
@@ -48,21 +101,21 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200/90 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-[11px] font-bold tracking-wider uppercase text-neutral-800">
-                {projectData.approvalBadge} • SWP/68/2024
+                {projectData.approvalBadge} • SWP/104/2024 & SWP/146/2024
               </span>
             </div>
 
-            {/* Main Headline - Optimized for Top Local & On-Page SEO */}
+            {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 leading-[1.08]">
               DTCP Approved Residential Plots for Sale
               <span className="block text-2xl sm:text-3xl lg:text-4xl text-neutral-700 font-bold mt-2">
-                Melapalayam, Tirunelveli
+                Kokkadikulam, Melapalayam
               </span>
             </h1>
 
             {/* Subtitle / Description emphasizing Land / Plots only */}
             <p className="text-base sm:text-lg text-neutral-600 leading-relaxed font-normal max-w-xl">
-              <strong className="text-neutral-900 font-bold">{projectData.fullProjectName}</strong> — Exclusive 8-plot DTCP approved residential plotted layout located at <strong>Madina Garden, Kokkattikulam</strong> (just 500m from Annai Hajira Women's College, Melapalayam, Tirunelveli). Planned with 30-feet wide internal avenue roads.
+              <strong className="text-neutral-900 font-bold">{projectData.fullProjectName}</strong> — Exclusive 7-plot DTCP approved residential plotted layout situated at <strong>Kokkadikulam (Scheme No: 2)</strong>, Melapalayam Ward, Tirunelveli Corporation. Direct 7.00-meter (23 Ft) road frontage with clear title and spot registration.
             </p>
 
             {/* Tamil Quote Card */}
@@ -83,7 +136,7 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
                 href="#plots-catalog"
                 className="btn-pill-primary px-7 py-3.5 text-sm"
               >
-                <span>Inspect 8 Available Plots</span>
+                <span>Inspect 7 Available Plots</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -92,7 +145,7 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
                 className="btn-pill-secondary px-6 py-3.5 text-sm"
               >
                 <MapPin className="w-4 h-4 text-sky-600" />
-                <span>View Satellite Map</span>
+                <span>View Exact Location</span>
               </a>
             </div>
 
@@ -100,95 +153,111 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
             <div className="grid grid-cols-3 gap-3 pt-4 border-t border-neutral-200/70 max-w-lg">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block">Total Land Area</span>
-                <span className="text-sm font-extrabold text-neutral-900 block mt-0.5">1133.00 Sq.M</span>
-                <span className="text-[10px] text-neutral-500 font-medium">0.28 Acre</span>
+                <span className="text-sm font-extrabold text-neutral-900 block mt-0.5">900.00 Sq.M</span>
+                <span className="text-[10px] text-neutral-500 font-medium">0.22 Acre / 22.24 Cts</span>
               </div>
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block">Sanctioned Road</span>
-                <span className="text-sm font-extrabold text-neutral-900 block mt-0.5">9.15 M (30 Ft)</span>
-                <span className="text-[10px] text-neutral-500 font-medium">Internal Road</span>
+                <span className="text-sm font-extrabold text-neutral-900 block mt-0.5">7.00 M (23 Ft)</span>
+                <span className="text-[10px] text-neutral-500 font-medium">TS No: 13/107 Road</span>
               </div>
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block">Exact Location</span>
-                <span className="text-sm font-extrabold text-neutral-900 block mt-0.5">500m to College</span>
-                <span className="text-[10px] text-neutral-500 font-medium">Melapalayam</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block">Allotted Plots</span>
+                <span className="text-sm font-extrabold text-neutral-900 block mt-0.5">7 மனைகள்</span>
+                <span className="text-[10px] text-neutral-500 font-medium">Plots 01 to 07</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Real Satellite Aerial View with Toggle to Blueprint */}
+          {/* Right Column: Multi-Slide Interactive Showcase */}
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-200/80 bg-neutral-900 group">
               
-              {/* Media Container: Satellite Image or Blueprint */}
+              {/* Slide Media Container */}
               <div className="relative w-full h-[420px] sm:h-[500px] lg:h-[540px] bg-neutral-950 flex items-center justify-center overflow-hidden">
-                {viewMode === 'satellite' ? (
-                  <>
+                {activeSlide.isBlueprint ? (
+                  <div
+                    className="w-full h-full bg-white p-4 flex items-center justify-center cursor-pointer"
+                    onClick={onOpenLayoutModal}
+                  >
                     <img
-                      src={asset("/assets/images/melapalayam_satellite_close.jpg")}
-                      alt="Actual Satellite Location of Noora Avenue II at Melapalayam"
-                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/20 to-transparent pointer-events-none" />
-
-                    {/* On-Map Marker Badges */}
-                    <div className="absolute top-16 left-6 px-3 py-1.5 rounded-full bg-neutral-900/90 text-white border border-white/20 text-xs font-bold shadow-lg flex items-center gap-2 backdrop-blur-md animate-pulse">
-                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500 ring-4 ring-rose-500/30" />
-                      <span>NOORA AVENUE - II Site (8 Plots)</span>
-                    </div>
-
-                    <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-white/95 text-neutral-900 border border-neutral-200 text-[11px] font-bold shadow-md flex items-center gap-1.5 backdrop-blur-md">
-                      <Navigation className="w-3.5 h-3.5 text-sky-600" />
-                      <span>500m from Annai Hajira College</span>
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full h-full bg-white p-4 flex items-center justify-center cursor-pointer" onClick={onOpenLayoutModal}>
-                    <img
-                      src={asset("/assets/images/plot_layout_scan.png")}
-                      alt="DTCP Sanctioned Layout Map Scale 1:400"
-                      className="max-h-full max-w-full object-contain hover:scale-102 transition-transform"
+                      src={activeSlide.image}
+                      alt={activeSlide.title}
+                      className="max-h-full max-w-full object-contain hover:scale-102 transition-transform duration-500"
                     />
                   </div>
+                ) : (
+                  <>
+                    <img
+                      src={activeSlide.image}
+                      alt={activeSlide.title}
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent pointer-events-none" />
+                  </>
                 )}
-              </div>
 
-              {/* View Toggle Bar (Top Right) */}
-              <div className="absolute bottom-5 left-5 right-5 sm:left-auto sm:right-5 flex flex-col gap-3">
-                
-                {/* View Switcher Pills */}
-                <div className="self-end p-1 rounded-full bg-neutral-900/80 backdrop-blur-md border border-white/20 flex items-center gap-1 shadow-lg">
-                  <button
-                    onClick={() => setViewMode('satellite')}
-                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                      viewMode === 'satellite' ? 'bg-white text-neutral-900 shadow-xs' : 'text-white/80 hover:text-white'
-                    }`}
-                  >
-                    Satellite Ground View
-                  </button>
-                  <button
-                    onClick={() => setViewMode('blueprint')}
-                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                      viewMode === 'blueprint' ? 'bg-white text-neutral-900 shadow-xs' : 'text-white/80 hover:text-white'
-                    }`}
-                  >
-                    Subdivision Map (1:400)
-                  </button>
+                {/* On-Slide Marker Badge (Top Left) */}
+                <div className="absolute top-6 left-6 px-3 py-1.5 rounded-full bg-neutral-900/90 text-white border border-white/20 text-xs font-bold shadow-lg flex items-center gap-2 backdrop-blur-md">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-500/30" />
+                  <span>{activeSlide.badge}</span>
                 </div>
 
-                {/* Floating Plot Preview Card */}
+                {/* Top Right Proximity Badge */}
+                <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-white/95 text-neutral-900 border border-neutral-200 text-[11px] font-bold shadow-md flex items-center gap-1.5 backdrop-blur-md">
+                  <Navigation className="w-3.5 h-3.5 text-sky-600" />
+                  <span>500m to Hajira College</span>
+                </div>
+
+                {/* Slide Navigation Buttons */}
+                <button
+                  onClick={handlePrevSlide}
+                  aria-label="Previous slide"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-neutral-900/70 hover:bg-neutral-900 text-white flex items-center justify-center border border-white/20 transition-all opacity-80 hover:opacity-100"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleNextSlide}
+                  aria-label="Next slide"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-neutral-900/70 hover:bg-neutral-900 text-white flex items-center justify-center border border-white/20 transition-all opacity-80 hover:opacity-100"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Bottom Card Overlay with Slide Thumbnails & Details */}
+              <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-2.5">
+                
+                {/* Slide Selector Indicators / Tabs */}
+                <div className="flex items-center justify-center gap-2 py-1 px-3 rounded-full bg-neutral-900/80 backdrop-blur-md border border-white/20 w-fit mx-auto">
+                  {heroSlides.map((slide, sIdx) => (
+                    <button
+                      key={slide.id}
+                      onClick={() => setCurrentSlideIndex(sIdx)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        sIdx === currentSlideIndex
+                          ? 'w-6 bg-sky-400'
+                          : 'w-2 bg-white/40 hover:bg-white/70'
+                      }`}
+                      aria-label={`Go to slide ${sIdx + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Floating Active Info Card */}
                 <div className="p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-neutral-200 shadow-xl text-left">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <span className="text-[10px] font-extrabold uppercase tracking-wider text-sky-700 bg-sky-50 px-2 py-0.5 rounded-md inline-block">
-                        Plot 01 (Corner)
+                        Slide {currentSlideIndex + 1} of {heroSlides.length} • {activeSlide.title}
                       </span>
-                      <h4 className="text-base font-extrabold text-neutral-900 mt-1">
-                        Sanctioned Plotted Land
+                      <h4 className="text-sm sm:text-base font-extrabold text-neutral-900 mt-1">
+                        {activeSlide.subtitle}
                       </h4>
-                      <p className="text-xs text-neutral-500 font-medium mt-0.5">
-                        21.90M × 6.50M • 30 Ft Avenue Road Frontage
+                      <p className="text-[11px] text-neutral-500 font-tamil mt-0.5">
+                        கொக்கடிகுளம் அபிவிருத்தி திட்டம் எண் 2 • மேலப்பாளையம் வார்டு
                       </p>
                     </div>
 
@@ -196,10 +265,10 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
                     <button
                       onClick={onOpenLayoutModal}
                       title="Click to view Sanctioned Subdivision Blueprint"
-                      className="w-14 h-14 rounded-xl border border-neutral-200 bg-neutral-50 overflow-hidden shrink-0 hover:border-neutral-900 transition-all group/thumb relative shadow-xs"
+                      className="w-13 h-13 rounded-xl border border-neutral-200 bg-neutral-50 overflow-hidden shrink-0 hover:border-neutral-900 transition-all group/thumb relative shadow-xs"
                     >
                       <img
-                        src={asset("/assets/images/plot_layout_scan.png")}
+                        src={asset("/assets/images/plot_layout_approved_7plots.png")}
                         alt="Plot layout thumbnail"
                         className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform"
                       />
@@ -209,16 +278,16 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
                     </button>
                   </div>
 
-                  <div className="mt-3 pt-3 border-t border-neutral-100 flex items-center justify-between">
+                  <div className="mt-2.5 pt-2.5 border-t border-neutral-100 flex items-center justify-between">
                     <span className="text-xs font-bold text-emerald-600 flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                      Ready for Immediate Sale
+                      7 Plots Ready for Immediate Sale
                     </span>
                     <button
                       onClick={onOpenLayoutModal}
                       className="text-xs font-extrabold text-neutral-900 hover:text-sky-700 flex items-center gap-1 transition-colors"
                     >
-                      <span>Inspect Drawing</span>
+                      <span>Full Blueprint View</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -272,7 +341,7 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
                   Road Width
                 </label>
                 <div className="text-sm font-extrabold text-neutral-900 flex items-center justify-between">
-                  <span>9.15 M (30 Ft) Road</span>
+                  <span>7.00 M (23 Ft) Road</span>
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 </div>
               </div>
@@ -306,7 +375,7 @@ export default function Hero({ projectData, onOpenLayoutModal, onSelectPlotFilte
                   className="btn-pill-primary w-full py-4 text-xs font-bold uppercase tracking-wider shadow-md"
                 >
                   <Search className="w-4 h-4" />
-                  <span>Inspect 8 Available Plots</span>
+                  <span>Inspect 7 Available Plots</span>
                 </button>
               </div>
 

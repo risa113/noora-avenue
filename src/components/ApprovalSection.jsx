@@ -18,12 +18,12 @@ export default function ApprovalSection({ projectData, onOpenLightbox }) {
               {approvalDetails.heading}
             </h2>
             <p className="text-xs sm:text-sm text-neutral-500 font-tamil mt-1">
-              மாவட்ட நகர் ஊரமைப்பு அலுவலகம் — Official Subdivision Sanction Order SWP/68/2024
+              மாவட்ட நகர் ஊரமைப்பு அலுவலகம் — Official Subdivision Sanction Orders SWP/104/2024 & SWP/146/2024
             </p>
           </div>
 
           <button
-            onClick={() => onOpenLightbox(approvalDetails.documentImage, "DTCP Sanction Order (ஒப்புதல் ஆவணம்)", "SWP/68/2024 • GT61QM93/2024")}
+            onClick={() => onOpenLightbox(approvalDetails.documentImage, "DTCP Sanction Order & Layout (ஒப்புதல் வரைபடம்)", "SWP/104/2024 • SWP/146/2024 • 7GDMQ9WA/2024")}
             className="btn-pill-primary text-xs py-2.5 px-5 self-start sm:self-auto"
           >
             <FileCheck2 className="w-3.5 h-3.5" />
@@ -41,14 +41,16 @@ export default function ApprovalSection({ projectData, onOpenLightbox }) {
                 Statutory Summary
               </span>
               <p className="text-sm text-neutral-600 leading-relaxed mb-5">
-                அனைத்து வளர்ச்சி அனுமதி, மனை அமைப்புகள், 9.15 மீ சாலை மற்றும் பூங்கா கட்டண வரம்புகள் அரசு விதிமுறைகளின்படி முறையாக நிறைவேற்றப்பட்டுள்ளன.
+                அனைத்து வளர்ச்சி அனுமதி, 7 மனை அமைப்புகள், 7.00 மீ நிலையிலுள்ள சாலை மற்றும் பூங்கா கட்டண வரம்புகள் அரசு விதிமுறைகளின்படி முறையாக நிறைவேற்றப்பட்டுள்ளன.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   { label: "உத்தரவு எண் (Sanction No)", val: approvalDetails.layoutOrderNo, accent: false },
+                  { label: "தொழில்நுட்ப உத்தரவு (Tech Sanction)", val: approvalDetails.techApprovalOrderNo, accent: true },
                   { label: "விண்ணப்ப எண் (Online Ref)", val: approvalDetails.onlineAppNo, accent: true },
                   { label: "மொத்த பரப்பளவு (Total Area)", val: approvalDetails.totalArea, accent: false },
+                  { label: "அங்கீகரிக்கப்பட்ட மனைகள்", val: approvalDetails.allottedPlots, accent: false },
                   { label: "பூங்கா கட்டணம் (Park Fee)", val: approvalDetails.parkAreaFee, accent: true },
                 ].map((item) => (
                   <div key={item.label} className="p-3.5 rounded-2xl bg-[#FAFAF9] border border-neutral-200/80">
@@ -64,7 +66,7 @@ export default function ApprovalSection({ projectData, onOpenLightbox }) {
             {/* Official Clauses */}
             <div className="space-y-3">
               <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block px-1">
-                அரசாணை & தொழில்நுட்ப விதிமுறைகள் (Clauses)
+                அரசாணை & தொழில்நுட்ப விதிமுறைகள் (Conditions)
               </span>
               {approvalDetails.officialClauses.map((clause, idx) => (
                 <div key={idx} className="p-4 rounded-2xl bg-white border border-neutral-200 shadow-2xs space-y-1 hover:border-neutral-300 transition-colors">
@@ -84,11 +86,11 @@ export default function ApprovalSection({ projectData, onOpenLightbox }) {
             <div className="rounded-3xl bg-white p-5 border border-neutral-200 shadow-sm text-left group">
               <div
                 className="relative overflow-hidden rounded-2xl bg-neutral-50 border border-neutral-200 flex items-center justify-center p-2 min-h-[440px] cursor-pointer"
-                onClick={() => onOpenLightbox(approvalDetails.documentImage, "DTCP Sanction Order (ஒப்புதல் ஆவணம்)", "SWP/68/2024 • GT61QM93/2024")}
+                onClick={() => onOpenLightbox(approvalDetails.documentImage, "DTCP Sanction Order & Layout (ஒப்புதல் வரைபடம்)", "SWP/104/2024 • SWP/146/2024 • 7GDMQ9WA/2024")}
               >
                 <img
                   src={approvalDetails.documentImage}
-                  alt="DTCP Sanction Order SWP/68/2024"
+                  alt="DTCP Sanction Order SWP/104/2024"
                   className="w-full h-auto max-h-[500px] object-contain mx-auto group-hover:scale-102 transition-transform duration-500 rounded"
                 />
                 <div className="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-xs">
@@ -100,8 +102,8 @@ export default function ApprovalSection({ projectData, onOpenLightbox }) {
               </div>
 
               <div className="mt-4 px-2 flex items-center justify-between text-xs text-neutral-500">
-                <span className="font-tamil">மனை உட்பிரிவு தொழில்நுட்ப ஒப்புதல் உத்திரவு</span>
-                <span className="text-neutral-900 font-extrabold">SWP/68/2024</span>
+                <span className="font-tamil">மனை உட்பிரிவு தொழில்நுட்ப ஒப்புதல் வரைபடம்</span>
+                <span className="text-neutral-900 font-extrabold">SWP/104/2024 • SWP/146/2024</span>
               </div>
             </div>
           </div>

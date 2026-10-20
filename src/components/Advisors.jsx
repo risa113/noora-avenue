@@ -28,7 +28,7 @@ export default function Advisors({ projectData }) {
               Verified Land Demarcation & Map Records
             </h2>
             <p className="text-xs sm:text-sm text-neutral-500 mt-2 font-normal leading-relaxed">
-              Every residential plot parcel at NOORA AVENUE - II is demarcated with verified GPS satellite positioning, DTCP layout approval SWP/68/2024, and 30-feet internal avenue road access.
+              Every residential plot parcel at NOORA AVENUE is demarcated with verified GPS satellite positioning, DTCP layout approvals SWP/104/2024 & SWP/146/2024, and 7.00-meter existing road access.
             </p>
           </div>
 
@@ -63,13 +63,13 @@ export default function Advisors({ projectData }) {
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100 mb-4 border border-neutral-100">
                   <img
                     src={item.image}
-                    alt={`${item.name} - Noora Avenue II DTCP residential plots Melapalayam`}
+                    alt={`${item.name} - Noora Avenue DTCP residential plots Melapalayam`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                   <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-neutral-900/90 text-white backdrop-blur-md text-[10px] font-bold flex items-center gap-1 shadow-xs">
                     <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                    <span>Verified Land</span>
+                    <span>Verified Record</span>
                   </div>
                 </div>
 
@@ -88,16 +88,17 @@ export default function Advisors({ projectData }) {
               {/* Contact Direct Promoter Desk */}
               <div className="pt-5 mt-5 border-t border-neutral-100">
                 <a
-                  href={`tel:${item.phoneTel}`}
+                  href={`tel:${projectData.contact.primaryPhoneTel}`}
                   className="w-full btn-pill-primary py-2.5 px-4 text-xs font-bold justify-between shadow-xs hover:shadow-md"
                 >
                   <span className="flex items-center gap-2">
                     <Phone className="w-3.5 h-3.5" />
-                    <span>Inquire: {item.phone}</span>
+                    <span>Inquire: {projectData.contact.primaryPhone}</span>
                   </span>
                   <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </div>
+
             </div>
           ))}
         </div>

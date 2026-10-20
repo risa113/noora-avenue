@@ -19,7 +19,7 @@ export default function Location({ locationDetails, projectData }) {
               {locationDetails.title}
             </h2>
             <p className="text-xs sm:text-sm text-neutral-600 mt-1 font-medium">
-              Madina Garden, Kokkattikulam Village • 500 Meters from Annai Hajira Women's College, Melapalayam, Tirunelveli
+              Kokkadikulam Scheme No: 2 • 500 Meters from Annai Hajira Women's College, Melapalayam, Tirunelveli
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export default function Location({ locationDetails, projectData }) {
                     Verified Ground Site
                   </span>
                   <h4 className="text-lg font-extrabold text-neutral-900 mt-0.5">
-                    Madina Garden, Kokkattikulam
+                    Kokkadikulam Scheme No: 2
                   </h4>
                   <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
                     {locationDetails.address}
@@ -76,6 +76,10 @@ export default function Location({ locationDetails, projectData }) {
               
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between py-1 border-b border-neutral-100">
+                  <span className="text-neutral-500">Development Scheme:</span>
+                  <span className="font-bold text-neutral-900 font-tamil">கொக்கடிகுளம் அபிவிருத்தி திட்டம் எண்: 2</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-neutral-100">
                   <span className="text-neutral-500">Village:</span>
                   <span className="font-bold text-neutral-900">{locationDetails.village}</span>
                 </div>
@@ -95,6 +99,33 @@ export default function Location({ locationDetails, projectData }) {
                 </div>
               </div>
             </div>
+
+            {/* Surrounding Boundaries from Blueprint */}
+            {locationDetails.surroundingBoundaries && (
+              <div className="p-5 rounded-3xl bg-[#FAFAF9] border border-neutral-200/90 text-xs space-y-2">
+                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">
+                  Sanctioned Boundaries (நான்கெல்லைகள்)
+                </span>
+                <div className="space-y-1.5 text-neutral-600">
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-neutral-900 shrink-0">North:</span>
+                    <span className="font-tamil">{locationDetails.surroundingBoundaries.north}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-neutral-900 shrink-0">South:</span>
+                    <span className="font-tamil">{locationDetails.surroundingBoundaries.south}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-neutral-900 shrink-0">East:</span>
+                    <span className="font-tamil">{locationDetails.surroundingBoundaries.east}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="font-bold text-neutral-900 shrink-0">West:</span>
+                    <span className="font-tamil">{locationDetails.surroundingBoundaries.west}</span>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Key Vicinity Distances */}
             <div className="space-y-2.5">
@@ -155,7 +186,7 @@ export default function Location({ locationDetails, projectData }) {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse" />
                   <span className="text-xs font-extrabold text-white">
-                    Site Location: Kokkattikulam, Melapalayam
+                    Site Location: Kokkadikulam Scheme No: 2, Melapalayam
                   </span>
                 </div>
 
@@ -191,7 +222,7 @@ export default function Location({ locationDetails, projectData }) {
               <div className="relative w-full h-[450px] sm:h-[520px] bg-neutral-900 flex items-center justify-center overflow-hidden">
                 {mapType === 'satellite' ? (
                   <iframe
-                    title="Google Satellite Map of Noora Avenue II at Kokkattikulam Melapalayam"
+                    title="Google Satellite Map of Noora Avenue at Kokkadikulam Melapalayam"
                     src={locationDetails.googleMapsEmbedUrl}
                     width="100%"
                     height="100%"
@@ -217,7 +248,7 @@ export default function Location({ locationDetails, projectData }) {
                   <div className="relative w-full h-full group/img cursor-pointer">
                     <img
                       src={asset("/assets/images/melapalayam_satellite_close.jpg")}
-                      alt="Scraped Aerial Map of Melapalayam Kokkattikulam Site"
+                      alt="Scraped Aerial Map of Melapalayam Kokkadikulam Site"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-neutral-950/20 pointer-events-none" />
@@ -226,8 +257,8 @@ export default function Location({ locationDetails, projectData }) {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2.5 rounded-2xl bg-neutral-900/95 text-white border border-white/20 shadow-2xl flex items-center gap-3 backdrop-blur-md">
                       <span className="w-3 h-3 rounded-full bg-rose-500 ring-4 ring-rose-500/40 animate-ping" />
                       <div className="text-left">
-                        <span className="text-[10px] text-sky-400 font-bold uppercase block leading-none">NOORA AVENUE - II</span>
-                        <span className="text-xs font-extrabold text-white block mt-0.5">Kokkattikulam Residential Plots (1-8)</span>
+                        <span className="text-[10px] text-sky-400 font-bold uppercase block leading-none">NOORA AVENUE</span>
+                        <span className="text-xs font-extrabold text-white block mt-0.5">Kokkadikulam Residential Plots (1-7)</span>
                       </div>
                     </div>
                   </div>
@@ -247,7 +278,7 @@ export default function Location({ locationDetails, projectData }) {
                   className="text-sky-400 hover:text-sky-300 font-bold flex items-center gap-1 transition-colors"
                 >
                   <span>Get Driving Route</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
 

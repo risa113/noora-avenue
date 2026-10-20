@@ -14,7 +14,7 @@ export default function WhyChooseUs({ projectData }) {
             Investment Assurance
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight">
-            Why choose NOORA AVENUE - II
+            Why choose {projectData.fullProjectName}
           </h2>
           <p className="text-sm sm:text-base text-neutral-500 mt-3 leading-relaxed">
             Engineered for long-term residential and investment consideration with absolute statutory transparency.

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, MessageCircle, Phone, Send } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MessageCircle, Phone, Send, MapPin, ShieldCheck } from 'lucide-react';
 
 export default function Contact({ projectData }) {
   const [formData, setFormData] = useState({
@@ -13,7 +13,7 @@ export default function Contact({ projectData }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const text = encodeURIComponent(
-      `Hello, I am interested in NOORA AVENUE - II.\nName: ${formData.name}\nPhone: ${formData.phone}\nPlot Interest: ${formData.plotInterest}\nMessage: ${formData.message || 'Please share availability and pricing details.'}`
+      `Hello, I am interested in NOORA AVENUE (SWP/104/2024).\nName: ${formData.name}\nPhone: ${formData.phone}\nPlot Interest: ${formData.plotInterest}\nMessage: ${formData.message || 'Please share availability and pricing details.'}`
     );
     window.open(`https://wa.me/919443283369?text=${text}`, '_blank');
     setSubmitted(true);
@@ -32,7 +32,7 @@ export default function Contact({ projectData }) {
             Connect with our sales desk
           </h2>
           <p className="text-sm sm:text-base text-neutral-500 mt-3 leading-relaxed">
-            Speak directly with our authorized project coordinators for plot allocations, site walkthroughs, and official registration documents.
+            Speak directly with our authorized project promoters for 7-plot allocations, site walkthroughs, and official registration documents.
           </p>
         </div>
 
@@ -50,43 +50,25 @@ export default function Contact({ projectData }) {
                   {projectData.brandName} {projectData.projectTitle}
                 </h3>
                 <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
-                  Official contact numbers verified from project records. Available for instant telephonic consultation and immediate site walkthrough scheduling.
+                  Official contact number for NOORA AVENUE. Available for instant telephonic consultation and immediate site walkthrough scheduling.
                 </p>
               </div>
 
-              {/* Phone 1 */}
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+              {/* Sole Authorized Contact Phone */}
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-sky-400 block">Primary Contact</span>
+                  <span className="text-[10px] uppercase font-bold text-sky-400 block">Authorized Contact Desk</span>
                   <a
                     href={`tel:${projectData.contact.primaryPhoneTel}`}
-                    className="text-lg sm:text-xl font-black text-white hover:text-sky-300 transition-colors block mt-0.5"
+                    className="text-xl sm:text-2xl font-black text-white hover:text-sky-300 transition-colors block mt-1"
                   >
                     {projectData.contact.primaryPhoneFormatted}
                   </a>
+                  <span className="text-[11px] text-neutral-400 block mt-0.5">Direct Line • 9:00 AM – 8:00 PM</span>
                 </div>
                 <a
                   href={`tel:${projectData.contact.primaryPhoneTel}`}
-                  className="px-4 py-2 rounded-full bg-white text-neutral-900 text-xs font-bold hover:bg-neutral-100 transition-colors"
-                >
-                  Call Now
-                </a>
-              </div>
-
-              {/* Phone 2 */}
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] uppercase font-bold text-sky-400 block">Secondary Contact</span>
-                  <a
-                    href={`tel:${projectData.contact.secondaryPhoneTel}`}
-                    className="text-lg sm:text-xl font-black text-white hover:text-sky-300 transition-colors block mt-0.5"
-                  >
-                    {projectData.contact.secondaryPhoneFormatted}
-                  </a>
-                </div>
-                <a
-                  href={`tel:${projectData.contact.secondaryPhoneTel}`}
-                  className="px-4 py-2 rounded-full bg-white text-neutral-900 text-xs font-bold hover:bg-neutral-100 transition-colors"
+                  className="px-4 py-2.5 rounded-full bg-white text-neutral-900 text-xs font-bold hover:bg-neutral-100 transition-colors shrink-0"
                 >
                   Call Now
                 </a>
@@ -100,9 +82,14 @@ export default function Contact({ projectData }) {
                 className="w-full btn-pill-primary bg-emerald-600 hover:bg-emerald-700 py-3.5 px-6 text-xs font-bold tracking-wider uppercase justify-center shadow-lg border border-emerald-500"
               >
                 <MessageCircle className="w-4 h-4 text-white" />
-                <span>Chat on WhatsApp (+91)</span>
+                <span>Chat on WhatsApp (+91 94432 83369)</span>
               </a>
 
+              {/* Direct Address Strip */}
+              <div className="pt-2 border-t border-white/10 flex items-start gap-2.5 text-xs text-neutral-400">
+                <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                <span>{projectData.locationDetails.address}</span>
+              </div>
             </div>
 
             {/* Tamil Banner */}
@@ -113,101 +100,105 @@ export default function Contact({ projectData }) {
               <p className="text-sm font-tamil text-neutral-900 font-bold leading-relaxed">
                 “{projectData.tamilQuote}”
               </p>
+              <div className="mt-2 text-xs text-neutral-500 font-medium">
+                DTCP Approval: SWP/104/2024 • 7 Sanctioned Residential Plots
+              </div>
             </div>
 
           </div>
 
           {/* Right Column: Instant Plot Enquiry Form */}
           <div className="lg:col-span-7">
-            <div className="p-7 sm:p-9 rounded-3xl bg-white border border-neutral-200 shadow-sm">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-sky-700 block mb-1">
-                Direct Submission
+            <div className="bg-white rounded-3xl p-7 sm:p-9 border border-neutral-200 shadow-sm">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-sky-700 block mb-1">
+                Instant Online Enquiry
               </span>
-              <h3 className="text-2xl font-extrabold text-neutral-900 tracking-tight mb-2">
-                Send an allocation inquiry
+              <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-900 tracking-tight">
+                Register Your Residential Plot Interest
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-500 mb-6">
-                Receive instant brochure PDF, sanction order copy, and latest plot availability via WhatsApp.
+              <p className="text-xs sm:text-sm text-neutral-500 mt-1 mb-6">
+                Receive exact boundary dimensions, pricing per cent, and official sanction copies directly on WhatsApp.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="text-xs font-bold text-neutral-700 block mb-1.5">
-                    Your Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Mohammed Farooq"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl bg-neutral-50 border border-neutral-200 text-sm text-neutral-900 focus:outline-hidden focus:border-neutral-900 transition-colors"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-xs font-bold text-neutral-700 block mb-1.5">
+                      Your Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="e.g. Mohamed Ibrahim"
+                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 text-xs text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 bg-[#FAFAF9]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-bold text-neutral-700 block mb-1.5">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="e.g. +91 98765 43210"
+                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 text-xs text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 bg-[#FAFAF9]"
+                    />
+                  </div>
                 </div>
 
                 <div>
                   <label className="text-xs font-bold text-neutral-700 block mb-1.5">
-                    Contact Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="+91 94432 83369"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl bg-neutral-50 border border-neutral-200 text-sm text-neutral-900 focus:outline-hidden focus:border-neutral-900 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-xs font-bold text-neutral-700 block mb-1.5">
-                    Plot of Interest
+                    Select Plot of Interest (1 to 7)
                   </label>
                   <select
                     value={formData.plotInterest}
                     onChange={(e) => setFormData({ ...formData, plotInterest: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl bg-neutral-50 border border-neutral-200 text-sm text-neutral-900 focus:outline-hidden focus:border-neutral-900 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 text-xs text-neutral-900 focus:outline-none focus:border-neutral-900 bg-[#FAFAF9]"
                   >
-                    <option value="Plot 01 (Corner)">Plot 01 — Corner / Southern (21.90M × 6.50M)</option>
-                    <option value="Plot 02 (Standard)">Plot 02 — Standard Residential (21.90M × 6.50M)</option>
-                    <option value="Plot 03 (Standard)">Plot 03 — Standard Residential (21.90M × 6.50M)</option>
-                    <option value="Plot 04 (Central Prime)">Plot 04 — Central Prime (21.90M × 6.50M)</option>
-                    <option value="Plot 05 (Central Prime)">Plot 05 — Central Prime (21.90M × 6.50M)</option>
-                    <option value="Plot 06 (Standard)">Plot 06 — Standard Residential (21.20M × 6.50M)</option>
-                    <option value="Plot 07 (Executive)">Plot 07 — Executive Curve (16.10M × 6.50M)</option>
-                    <option value="Plot 08 (Villa)">Plot 08 — Northern Villa Cul-de-sac (16.40M × 7.00M)</option>
-                    <option value="Any Plot">Any Available Plot</option>
+                    <option value="Plot 01 (Southern Corner - 125.9 Sq.M)">Plot 01 (Southern Corner - 125.86 Sq.M / 3.11 Cts)</option>
+                    <option value="Plot 02 (Standard Residential - 123.0 Sq.M)">Plot 02 (Standard Residential - 123.00 Sq.M / 3.04 Cts)</option>
+                    <option value="Plot 03 (Standard Residential - 124.2 Sq.M)">Plot 03 (Standard Residential - 124.20 Sq.M / 3.07 Cts)</option>
+                    <option value="Plot 04 (Central Prime - 125.4 Sq.M)">Plot 04 (Central Prime - 125.40 Sq.M / 3.10 Cts)</option>
+                    <option value="Plot 05 (Core Residential - 127.2 Sq.M)">Plot 05 (Core Residential - 127.20 Sq.M / 3.14 Cts)</option>
+                    <option value="Plot 06 (Standard Residential - 128.7 Sq.M)">Plot 06 (Standard Residential - 128.70 Sq.M / 3.18 Cts)</option>
+                    <option value="Plot 07 (Northern Villa - 129.3 Sq.M)">Plot 07 (Northern Villa - 129.30 Sq.M / 3.20 Cts)</option>
+                    <option value="Any Available Plot / Full Layout Enquiry">Any Available Plot / Full Layout Enquiry</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="text-xs font-bold text-neutral-700 block mb-1.5">
-                    Your Specific Message or Inquiry
+                    Your Specific Message or Requirement
                   </label>
                   <textarea
-                    rows={3}
-                    placeholder="Please let me know pricing, down payment terms, and next available site walkthrough slot."
+                    rows="3"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl bg-neutral-50 border border-neutral-200 text-sm text-neutral-900 focus:outline-hidden focus:border-neutral-900 transition-colors resize-none"
+                    placeholder="e.g. Interested in booking Plot 01. Please send price per cent and schedule a site visit."
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 text-xs text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 bg-[#FAFAF9]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-pill-primary w-full py-4 text-xs font-bold uppercase tracking-wider justify-center shadow-md"
+                  className="btn-pill-primary w-full py-3.5 text-xs font-bold uppercase tracking-wider justify-center shadow-md"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Send Inquiry via WhatsApp</span>
+                  <Send className="w-3.5 h-3.5" />
+                  <span>Submit & Connect on WhatsApp</span>
                 </button>
-              </form>
 
-              {submitted && (
-                <div className="mt-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center gap-3 text-xs text-emerald-800 font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Inquiry prepared! Opening WhatsApp to connect directly with the sales coordinator.</span>
-                </div>
-              )}
+                {submitted && (
+                  <p className="text-xs text-emerald-600 font-bold text-center pt-2 flex items-center justify-center gap-1">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>WhatsApp chat opened! Our authorized promoter will assist you immediately.</span>
+                  </p>
+                )}
+              </form>
             </div>
           </div>
 
